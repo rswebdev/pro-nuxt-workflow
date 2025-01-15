@@ -1,6 +1,6 @@
 <template>
   <div class="article__div">
-    <img class="article__img" :src="article.urlToImage" :alt="article.title" />
+    <NuxtImg class="article__img" :src="article.urlToImage" :alt="article.title" @error="console.log('Image loading error')"/>
     <div class="article__item-div">
       <p>{{ article.title }}</p>
       <p>{{ article.author }}</p>
@@ -34,7 +34,7 @@
       border-top-right-radius: 6px;
       transition: all 1s ease-in-out;
       &:hover {
-        object-fit: fill;
+        object-fit: contain;
       }
     }
     &__item-div {
